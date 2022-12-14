@@ -23,12 +23,15 @@ pragma solidity 0.8.17;
 
 import "erc721a/contracts/ERC721A.sol";
 import "erc721a/contracts/extensions/ERC721AQueryable.sol"; 
+import "@openzeppelin/contracts/access/Ownable.sol";
 //Importing the ERC721A standard
 
-contract NFTMinter is ERC721A {
+contract NFTMinter is ERC721A, ERC721AQueryable, Ownable {
 
     // This constructor initialising the NFT name and its symbol
     constructor() ERC721A("Titan","Titan") {}
+    
+    //This is the mint function 
      function mint(uint256 quantity) external onlyOwner {
         // `_mint`'s second argument now takes in a `quantity`, not a `tokenId`.
         _mint(msg.sender, quantity);
@@ -63,7 +66,11 @@ struct Address_Data{
     uint128 numberMinted; //tracks the number the user has minted
 }
 
-//This is the mint function 
+/**
+ * Mapping, The next set of code blocks contains mappings
+ */
+
+
 
 
 
