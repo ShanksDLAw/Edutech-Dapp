@@ -21,7 +21,8 @@ pragma solidity 0.8.17;
 // Uncomment this line to use console.log
 // import "hardhat/console.sol";
 
-import "erc721a/contracts/ERC721A.sol"; 
+import "erc721a/contracts/ERC721A.sol";
+import "erc721a/contracts/extensions/ERC721AQueryable.sol"; 
 //Importing the ERC721A standard
 
 contract NFTMinter is ERC721A {
@@ -47,6 +48,8 @@ contract NFTMinter is ERC721A {
         bool burned; //checks whether it is burned
 
     }
+
+
 
 
 /**
