@@ -16,7 +16,7 @@
 
 
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.17;
+pragma solidity 0.8.4;
 
 // Uncomment this line to use console.log
 // import "hardhat/console.sol";
@@ -44,13 +44,7 @@ contract NFTMinter is ERC721A, ERC721AQueryable, Ownable {
      * checks whether it has been burned or not
      * 
      * */
-    struct Token_Ownership {
-
-        address Owner_address; //checks the owners address
-        uint64 startTimeStamp; //checks the start timestamp, Got no clue why it is a uint64
-        bool burned; //checks whether it is burned
-
-    }
+    
 
 
 
@@ -66,9 +60,12 @@ struct Address_Data{
     uint128 numberMinted; //tracks the number the user has minted
 }
 
-/**
- * Mapping, The next set of code blocks contains mappings
- */
+//Creating the max supply
+
+function totalSupply(uint256 MAX_SUPPLY) public view returns (uint256) {
+    MAX_SUPPLY = 123000;
+    return MAX_SUPPLY;
+}
 
 
 
